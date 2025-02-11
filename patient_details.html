@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient Details</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #000428, #004e92);
+            margin: 0;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.5);
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #ff416c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #ff4b2b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add Patient Details</h2>
+        <form id="patientForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter patient name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment">Appointment Number:</label>
+                <input type="text" id="appointment" placeholder="Enter appointment number" required>
+            </div>
+            <div class="form-group">
+                <label for="report">Report Analysis:</label>
+                <input type="text" id="report" placeholder="Enter report type (e.g., Blood Test, X-Ray)" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" rows="4" placeholder="Enter additional details" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <a href="doctor.html" class="back-btn">Back to Dashboard</a>
+    </div>
+
+    <script>
+        document.getElementById("patientForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const patient = {
+                name: document.getElementById("name").value,
+                dob: document.getElementById("dob").value,
+                appointment: document.getElementById("appointment").value,
+                report: document.getElementById("report").value,
+                description: document.getElementById("description").value
+            };
+
+            let patients = JSON.parse(localStorage.getItem("patients")) || [];
+            patients.push(patient);
+            localStorage.setItem("patients", JSON.stringify(patients));
+
+            // Redirect ONLY after successful submission
+            window.location.href = "doctor.html";
+        });
+    </script>
+</body>
+
+</html>

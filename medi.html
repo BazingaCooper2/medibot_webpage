@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #000428, #004e92);
+            font-family: 'Poppins', sans-serif;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            display: flex;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            align-items: center;
+        }
+
+        .form-container {
+            padding: 10px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        h3,
+        p,
+        label {
+            color: white;
+        }
+
+        input {
+            width: 70%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        button {
+            width: 80%;
+
+            padding: 12px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.5);
+        }
+
+        .illustration {
+            padding: 20px;
+        }
+
+        .register a {
+            color: #ff416c;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .register a:hover {
+            color: #ff4b2b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Welcome Back!</h2>
+            <h3>Sign in to</h3>
+            <p>Medibot - Your Health Buddy</p>
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter your user name"><br>
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <button onclick="validateLogin()">Login</button>
+            <p class="register"><a href="#">Sign up</a></p>
+        </div>
+        <div class="illustration">
+            <img src="med.jpg" alt="Illustration" width="200">
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter both username and password.");
+            } else {
+                localStorage.setItem("username", username);
+                window.location.href = "profile.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
