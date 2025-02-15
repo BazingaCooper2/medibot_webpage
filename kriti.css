@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1d2453;
+    color: white;
+    padding: 140px 50px;
+    border-radius: 30px;
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    height: 80%;
+    text-align: center;
+    min-height: 300px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 180px;
+    font-weight: 700;
+    color: #dce1ff;
+    padding-top: 0px;
+    z-index: 2;
+    margin-top: 0.8px;
+    line-height: 1;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: #ff5f5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px;
+}
+
+.service-card {
+    width: 200px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.green {
+    background: #5bc0be;
+}
+
+.yellow {
+    background: #f4b400;
+}
+
+.pink {
+    background: #ff9f9f;
+}
+
+.blue {
+    background: #4586ff;
+}

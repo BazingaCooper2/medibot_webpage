@@ -127,7 +127,7 @@
         <div class="section">
             <h3>Patient Records</h3>
             <div id="patientList">
-                <!-- Patient records will be loaded here -->
+          
             </div>
         </div>
 
@@ -138,13 +138,13 @@
         <div class="section">
             <h3>Upcoming Appointments</h3>
             <div class="card">
-                <p><strong>Patient:</strong> John Doe</p>
-                <p><strong>Date:</strong> 02/15/2025 | 10:00 AM</p>
+                <p><strong>Patient:</strong> ----</p>
+                <p><strong>Date:</strong>--/--/---- || --:--PM</p>
                 <button>View Details</button>
             </div>
             <div class="card">
-                <p><strong>Patient:</strong> Jane Smith</p>
-                <p><strong>Date:</strong> 02/17/2025 | 02:00 PM</p>
+                <p><strong>Patient:</strong> ----</p>
+                <p><strong>Date:</strong> --/--/---- || --:--PM</p>
                 <button>View Details</button>
             </div>
         </div>
@@ -152,8 +152,8 @@
 
     <script>
         function logout() {
-            localStorage.removeItem("username");  // Clear stored user data
-            window.location.href = "medi.html";  // Redirect to the login page
+            localStorage.removeItem("username");  
+            window.location.href = "medi.html";  
         }
         document.getElementById("doctorName").innerText = localStorage.getItem("username");
 
@@ -169,7 +169,7 @@
                     <p><strong>Name:</strong> ${patient.name}</p>
                     <p><strong>DOB:</strong> ${patient.dob}</p>
                     <p><strong>Appointment #:</strong> ${patient.appointment}</p>
-                    <p><strong>Report:</strong> ${patient.report}</p>
+                    <p><strong>Report:</strong> ${patient.report}</p>  
                     <p><strong>Description:</strong> ${patient.description}</p>
                     <button>View Report</button>
                     <button class="delete-btn" onclick="deletePatient(${index})">X</button>
