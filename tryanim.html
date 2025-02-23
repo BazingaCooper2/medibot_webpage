@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            margin: 0;
+            background-color: #e5e5e5;
+        }
+        main{
+            width: min(1200px, 90vw);
+            margin: auto;
+        }
+        .slider{
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(
+                to right,
+                transparent,
+                #000 10% 90%,
+                transparent
+            );
+        }
+        .slider .list{
+            display: flex;
+            width: calc(var(--width) * var(--quantity) * 2);
+            align-items: center;
+            gap: 10px;
+            animation: autoRun 10s linear infinite;
+        }
+        .slider .list .item{
+            width: var(--width);
+            height: var(--height);
+            flex-shrink: 0; /* Prevents items from shrinking */
+            animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+        }
+        .slider .list .item img{
+            width: 100%;
+        }
+        @keyframes autoRun{
+            from{
+                transform: translateX(0);
+            }to{
+                transform: translateX(calc(-1 * var(--width) * var(--quantity)));
+            }
+        }
+        .slider:hover .item{
+            animation-play-state: paused!important;
+            filter: grayscale(1);
+        }
+        .slider .item:hover{
+            filter: grayscale(0);
+        }
+        .slider[reverse="true"] .item{
+            animation: reversePlay 10s linear infinite;
+        }
+        @keyframes reversePlay{
+            from{
+                left: calc(var(--width) * -1);
+            }to{
+                left: 100%;
+            }
+        }
+        .green {
+            background: #5bc0be;
+            margin-left: -30px;
+        }
+
+        .yellow {
+            background: #f4b400;
+        }
+
+        .pink {
+            background: #ff9f9f;
+        }
+
+        .blue {
+            background: #4586ff;
+        }
+        .orange {
+            background: #E8B48F;
+        }
+        .purple {
+            background: #BDABD9;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="slider" reverse="true" style="
+            --width: 200px;
+            --height: 200px;
+            --quantity: 6;
+        ">
+            <div class="list">
+                <div class="item green" style="--position: 1"></div>
+                <div class="item yellow" style="--position: 2"></div>
+                <div class="item pink" style="--position: 3"></div>
+                <div class="item blue" style="--position: 4"></div>
+                <div class="item orange" style="--position: 5"></div>
+                <div class="item purple" style="--position: 6"></div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
