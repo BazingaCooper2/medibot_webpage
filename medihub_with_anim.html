@@ -212,7 +212,7 @@
         <input class="Search" type="text" placeholder="Search...">
         <nav>
             <ul class="tools">
-                <a href="#" onclick="logout()">Logout</a>
+                <a href="#" onclick="login()">Login</a>
                 <li><a href="#">Offers</a></li>
                 <li><a href="#">Cart</a></li>
                 <li><a href="#">Login</a></li>
@@ -221,8 +221,8 @@
     </header>
 
     <!-- Google Login Button -->
-    <div id="g_id_onload" data-client_id="38113827105-lu1740n9qf9ct6c99a26kffdapokb286.apps.googleusercontent.com" data-callback="handleCredentialResponse"
-        data-auto_prompt="false">
+    <div id="g_id_onload" data-client_id="38113827105-lu1740n9qf9ct6c99a26kffdapokb286.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse" data-auto_prompt="false">
     </div>
 
     <div class="g_id_signin" data-type="standard"></div>
@@ -239,7 +239,7 @@
 
     <main>
         <script>
-            function logout() {
+            function login() {
                 localStorage.removeItem("username");
                 window.location.href = "login.html";
             }
